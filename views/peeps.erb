@@ -1,0 +1,23 @@
+
+<html>
+  <head></head>
+  <body>
+    <h1>Peeps</h1>
+    <% @peeps.each do |peep|%>
+    <% end %>
+  </body>
+</html>
+
+
+ <main>
+    <h1>Peeps</h1>
+    <ul class="peeps">
+      <% @peeps.each do |peep| %>
+        <li class="peep">
+          <p class="peep__peep_text"><%= peep.peep.peep_text %></p>
+          <p class="peep__username">by <%= peep.username %></p>
+          <p class="peep__time"><%= peep.created_at %></p>
+        </li>
+      <% end %>
+    </ul>
+  </main>

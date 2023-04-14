@@ -28,12 +28,11 @@ describe PeepRepository do
 
     peep = repo.sort_by_rev_time
 
-    expect(peep.length).to eq(9)
-    expect(peep.first.peep_text).to eq('woof woof ... aaaaaaah woof')
-    expect(peep.first.id).to eq(9)
-    expect(peep.last.id).to eq(4)
-    expect(peep.first.username).to eq('good_boy')
-    expect(peep.last.time_tag).to eq('2023-04-08 20:30:00')
+    expect(peep.length).to eq(5)
+    expect(peep.first.peep_text).to eq('Hey there')
+    expect(peep.first.id).to eq(3)
+    expect(peep.last.id).to eq(1)
+    # expect(peep.first.username).to eq('good_boy')
+    expect(peep.last.time_tag).to eq('2023-04-11 10:00:00')
   end
-
 end

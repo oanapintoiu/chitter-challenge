@@ -55,8 +55,8 @@ Put the different nouns in this table. Replace the example with your own nouns.
 | Record                | Properties          |
 | --------------------- | ------------------  |
 | users                 | full_name, username, email, password
-| peeps                 | peep_text, username, time_tag
-| notifications         | username, peep_tag, time_tag
+| peeps                 | peep_text, time_tag, user_id
+| notifications         | user_id, peep_id
 
 1. Name of the first table (always plural): `users` 
 
@@ -64,10 +64,10 @@ Put the different nouns in this table. Replace the example with your own nouns.
 
 2. Name of the second table (always plural): `peeps` 
 
-    Column names: `peep_text`, `username`, `time_tag`
+    Column names: `peep_text`, `time_tag`, ``
 
 3. Name of the third table (alwyas plural): `notifications` 
-    Column names: `username`, `peep_tag`, `time_tag`
+    Column names: `peep_tag`
 
 ## 3. Decide the column types.
 
@@ -139,7 +139,7 @@ CREATE TABLE "public"."users" (
     "full_name" text,
     "username" text,
     "email" text,
-    "password" char(12), 
+    "password" varchar, 
     PRIMARY KEY ("id")
 );
 
@@ -148,17 +148,16 @@ CREATE TABLE "public"."users" (
 CREATE TABLE "public"."peeps" (
     "id" SERIAL,
     "peep_text" text,
-    "username" text,
     "time_tag" timestamp,
+    "user_id" int,
     PRIMARY KEY ("id")
 );
 
 -- Create the third table.
 CREATE TABLE "public"."notifications" (
     "id" SERIAL,
-    "username" text,
-    "peep_tag" text,
-    "time_tag" timestamp,
+    "peep_id" int,
+    "user_id" int,
     PRIMARY KEY ("id")
 );
 

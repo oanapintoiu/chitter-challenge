@@ -47,7 +47,8 @@ describe UserRepository do
     expect(user.last.full_name).to eq('Pedro Pascal')
     expect(user.last.username).to eq('mandalorian')
     expect(user.last.email).to eq('ppascal@email.com')
-    expect(user.last.password).to eq('grogu2')
+    # expect(user.last.password).to eq('grogu2') -> can't use as BCrypt changes password hash with every run
   end
+
 
 end
